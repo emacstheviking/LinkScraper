@@ -5,7 +5,7 @@ Extract all A links from a page and optionally remove all of those
 that are not 'on-site'. This is achieved by passing in the full URL to
 the constructor, for example:
 
-    <a href="http://foo.bar.com">http://foo.bar.com</a>
+    http://foo.bar.com
 
 which enables a simplistic check to know what's local and what isn't.
 
