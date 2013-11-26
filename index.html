@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset='utf-8' />
+    <meta http-equiv="X-UA-Compatible" content="chrome=1" />
+    <meta name="description" content="Linkscraper : A PHP link scraper utility belt class" />
+
+    <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/stylesheet.css">
+
+    <title>Linkscraper</title>
+  </head>
+
+  <body>
+
+    <!-- HEADER -->
+    <div id="header_wrap" class="outer">
+        <header class="inner">
+          <a id="forkme_banner" href="https://github.com/emacstheviking/LinkScraper">View on GitHub</a>
+
+          <h1 id="project_title">Linkscraper</h1>
+          <h2 id="project_tagline">A PHP link scraper utility belt class</h2>
+
+            <section id="downloads">
+              <a class="zip_download_link" href="https://github.com/emacstheviking/LinkScraper/zipball/master">Download this project as a .zip file</a>
+              <a class="tar_download_link" href="https://github.com/emacstheviking/LinkScraper/tarball/master">Download this project as a tar.gz file</a>
+            </section>
+        </header>
+    </div>
+
+    <!-- MAIN CONTENT -->
+    <div id="main_content_wrap" class="outer">
+      <section id="main_content" class="inner">
+        <h1>
+<a name="linkscraper---a-php-page-scraping-utility-belt-class" class="anchor" href="#linkscraper---a-php-page-scraping-utility-belt-class"><span class="octicon octicon-link"></span></a>LinkScraper - A PHP page scraping utility belt class.</h1>
+
+<p>Extract all A links from a page and optionally remove all of those
+that are not 'on-site'. This is achieved by passing in the full URL to
+the constructor, for example:</p>
+
+<pre><code>http://foo.bar.com
+</code></pre>
+
+<p>which enables a simplistic check to know what's local and what isn't.</p>
+
+<h1>
+<a name="licence" class="anchor" href="#licence"><span class="octicon octicon-link"></span></a>Licence</h1>
+
+<p>LGPL3. Do what you will with it but a link back would be nice and also
+knowing what you used it for is also of interest! Thanks. :)</p>
+
+<h1>
+<a name="operation-and-use" class="anchor" href="#operation-and-use"><span class="octicon octicon-link"></span></a>Operation and Use</h1>
+
+<p>This class implements the following interfaces: Iterator, ArrayAccess
+which means you can treat is just like an array m aking it very easy
+to process the links it finds at any given location.</p>
+
+<p>I have made it <strong>immutable</strong> once loaded. If you try to change the
+contents of it after it has been loaded it will die. You can change
+that if you want but I prefer not to change things once they are
+fixed, that's my 'functional' bias with PHP these days!</p>
+
+<p>Typical Usage:</p>
+
+<pre><code>$links = new PageSucker("http://google.com");
+
+echo $links[0];
+
+$links[0] = "something"; // will die() as you cannot change its contents.
+
+foreach ($links as $l) {
+    echo $l . '&lt;br /&gt;';
+}
+</code></pre>
+
+<hr><h2>
+<a name="typical-usage" class="anchor" href="#typical-usage"><span class="octicon octicon-link"></span></a>Typical Usage:</h2>
+
+<pre><code>$links = new PageSucker("http://google.com");
+
+echo $links[0];
+
+$links[0] = "something"; // will die() as you cannot change its contents.
+
+foreach ($links as $l) {
+    echo $l . '&lt;br /&gt;';
+}
+</code></pre>
+
+<h2>
+<a name="examplephp-output" class="anchor" href="#examplephp-output"><span class="octicon octicon-link"></span></a>Example.php output</h2>
+
+<p>If you run the example program as listed you should see this output:</p>
+
+<pre><code>$ php example.php
+string(29) "http://www.google.co.uk/webhp"
+string(29) "http://www.google.co.uk/imghp"
+string(29) "http://maps.google.co.uk/maps"
+string(24) "https://play.google.com/"
+string(23) "http://www.youtube.com/"
+string(30) "http://news.google.co.uk/nwshp"
+string(29) "https://mail.google.com/mail/"
+string(25) "https://drive.google.com/"
+string(40) "http://www.google.co.uk/intl/en/options/"
+string(31) "https://www.google.com/calendar"
+string(30) "http://translate.google.co.uk/"
+string(31) "http://books.google.co.uk/bkshp"
+string(32) "http://www.google.co.uk/shopping"
+string(23) "http://www.blogger.com/"
+string(31) "http://www.google.co.uk/finance"
+string(30) "https://plus.google.com/photos"
+string(26) "http://video.google.co.uk/"
+string(40) "https://accounts.google.com/ServiceLogin"
+string(35) "http://www.google.co.uk/preferences"
+string(32) "http://google.com:80/preferences"
+string(38) "http://www.google.co.uk/history/optout"
+string(36) "http://google.com:80/advanced_search"
+string(35) "http://google.com:80/language_tools"
+string(33) "http://google.com:80/intl/en/ads/"
+string(30) "http://google.com:80/services/"
+string(45) "https://plus.google.com/103583604759580854844"
+string(39) "http://google.com:80/intl/en/about.html"
+string(37) "http://www.google.co.uk/setprefdomain"
+string(38) "http://google.com:80/intl/en/policies/"
+I don't want to be mutable
+</code></pre>
+
+<p>Note the message at the end. I deliberately chose it to be this way so that my code (or anybody elses) couldn't accidentally add things that weren't there in the first place. Change it if you want.</p>
+      </section>
+    </div>
+
+    <!-- FOOTER  -->
+    <div id="footer_wrap" class="outer">
+      <footer class="inner">
+        <p class="copyright">Linkscraper maintained by <a href="https://github.com/emacstheviking">emacstheviking</a></p>
+        <p>Published with <a href="http://pages.github.com">GitHub Pages</a></p>
+      </footer>
+    </div>
+
+    
+
+  </body>
+</html>
