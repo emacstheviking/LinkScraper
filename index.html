@@ -61,32 +61,19 @@ contents of it after it has been loaded it will die. You can change
 that if you want but I prefer not to change things once they are
 fixed, that's my 'functional' bias with PHP these days!</p>
 
-<p>Typical Usage:</p>
-
-<pre><code>$links = new PageSucker("http://google.com");
-
-echo $links[0];
-
-$links[0] = "something"; // will die() as you cannot change its contents.
-
-foreach ($links as $l) {
-    echo $l . '&lt;br /&gt;';
-}
-</code></pre>
-
-<hr><h2>
+<h2>
 <a name="typical-usage" class="anchor" href="#typical-usage"><span class="octicon octicon-link"></span></a>Typical Usage:</h2>
 
-<pre><code>$links = new PageSucker("http://google.com");
+<div class="highlight highlight-php"><pre><span class="nv">$links</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">PageSucker</span><span class="p">(</span><span class="s2">"http://google.com"</span><span class="p">);</span>
 
-echo $links[0];
+<span class="k">echo</span> <span class="nv">$links</span><span class="p">[</span><span class="mi">0</span><span class="p">];</span>
 
-$links[0] = "something"; // will die() as you cannot change its contents.
+<span class="nv">$links</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="s2">"something"</span><span class="p">;</span> <span class="c1">// will die() as you cannot change its contents.</span>
 
-foreach ($links as $l) {
-    echo $l . '&lt;br /&gt;';
-}
-</code></pre>
+<span class="k">foreach</span> <span class="p">(</span><span class="nv">$links</span> <span class="k">as</span> <span class="nv">$l</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">echo</span> <span class="nv">$l</span> <span class="o">.</span> <span class="s1">'&lt;br /&gt;'</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
 
 <h2>
 <a name="examplephp-output" class="anchor" href="#examplephp-output"><span class="octicon octicon-link"></span></a>Example.php output</h2>
@@ -126,7 +113,7 @@ string(38) "http://google.com:80/intl/en/policies/"
 I don't want to be mutable
 </code></pre>
 
-<p>Note the message at the end. I deliberately chose it to be this way so that my code (or anybody elses) couldn't accidentally add things that weren't there in the first place. Change it if you want.</p>
+<p>Note the message at the end. I deliberatelty chose it to be this way so that my code (or anybody elses) couldn't accidentally add things that weren't there in the first place. Change it if you want.</p>
       </section>
     </div>
 
