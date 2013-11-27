@@ -31,15 +31,15 @@ fixed, that's my 'functional' bias with PHP these days!
 ## Typical Usage:
 
 ```php
-    $links = new PageSucker("http://google.com");
+$links = new PageSucker("http://google.com");
 
-    echo $links[0];
+echo $links[0];
 
-    $links[0] = "something"; // will die() as you cannot change its contents.
+$links[0] = "something"; // will die() as you cannot change its contents.
 
-    foreach ($links as $l) {
-        echo $l . '<br />';
-    }
+foreach ($links as $l) {
+    echo $l . '<br />';
+}
 ```
 
 ## Example.php output
