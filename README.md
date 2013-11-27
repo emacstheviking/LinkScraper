@@ -28,24 +28,9 @@ contents of it after it has been loaded it will die. You can change
 that if you want but I prefer not to change things once they are
 fixed, that's my 'functional' bias with PHP these days!
 
- 
-Typical Usage:
- 
-    $links = new PageSucker("http://google.com");
-
-    echo $links[0];
-
-    $links[0] = "something"; // will die() as you cannot change its contents.
- 
-    foreach ($links as $l) {
-        echo $l . '<br />';
-    }
-
--------------------------------------------------------------------------
-
-
 ## Typical Usage:
 
+```php
     $links = new PageSucker("http://google.com");
 
     echo $links[0];
@@ -55,6 +40,7 @@ Typical Usage:
     foreach ($links as $l) {
         echo $l . '<br />';
     }
+```
 
 ## Example.php output
 
