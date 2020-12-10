@@ -94,10 +94,8 @@ class LinkScraper implements Iterator, ArrayAccess, Countable
  
     $html    = file_get_contents($this->url);
     $matches = array();
- 
-    preg_match_all("/a[\s]+[^>]*?href[\s]?=[\s\"\']+(.*?)[\"\']+.*?>([^<]+|.*?)?<\/a>/",
-		   $html,
-		   &$matches);
+	  
+    preg_match_all("/a[\s]+[^>]*?href[\s]?=[\s\"\']+(.*?)[\"\']+.*?>([^<]+|.*?)?<\/a>/", $html, $matches);
      
     $links = array_unique($matches[1]);
  
